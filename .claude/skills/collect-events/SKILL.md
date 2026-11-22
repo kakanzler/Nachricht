@@ -1,0 +1,83 @@
+---
+name: collect-events
+description: Nachricht 用に、日本国内・オンラインの IT カンファレンス／勉強会を Web から調べて data/events.json を更新する。「イベントを集めて」「実データに更新」「events.json を更新」などのときに使う。
+---
+
+# collect-events
+
+ITイベントポータル Nachricht のデータ `data/events.json` を、Web 上の実データで更新する。
+
+## 1. 準備
+- `data/events.json` を読み、既存のイベントと使われているタグ名を把握する。
+- 今日の日付を確認し、収集期間を **今日〜約3か月先** とする。
+
+## 2. 情報源（起点）
+以下をすべて確認したうえで、Web 検索でさらに広げる。
+
+**総合**
+- connpass カンファレンス特集: https://connpass.com/feature/conference/
+- CodeZine「ITエンジニア向け大規模イベントリスト」連載: https://codezine.jp/article/detail/30386
+  - 毎月「YYYY年M月に開催される注目の…」の記事が出る。記事の末尾にある連載一覧から最新月の記事をたどる。
+- TECH PLAY: https://techplay.jp/event — 企業主催のオンラインカンファレンスを拾う。「Conference」「カンファレンス」で検索する。
+- Doorkeeper: https://www.doorkeeper.jp/events — 企業の販促ウェビナーが多いので、カンファレンス級だけ採用する。
+- dev.events（日本）: https://dev.events/AS/JP/tech — 海外系・英語のカンファレンス。分野別のページもある（`/AS/JP/sre`、`/AS/JP/cloud` など）。
+
+**AWS・クラウド・インフラ（重点）**
+- JAWS-UG 公式: https://jaws-ug.jp/ — トップページの「開催予定のイベント」に、支部の勉強会が並ぶ。
+- AWS イベントとウェビナー: https://aws.amazon.com/jp/events/ — AWS Summit Japan、JumpStart などの公式イベント。
+- CloudNative Days: https://cloudnativedays.jp/ — 次回開催の告知を確認する。
+- SRE Kaigi: `https://<年>.srekaigi.net/`（例: https://2027.srekaigi.net/）
+- Google Cloud Webinars: https://cloudonair.withgoogle.com/ — Cookie の同意画面が出たら「同意しない」を選ぶ。
+- connpass のキーワード検索: `AWS`、`インフラ`、`SRE`、`Kubernetes`、`クラウド`、`Platform Engineering`
+
+### 取得のコツ（2026-11 時点で確認済み）
+- connpass と CodeZine は **WebFetch では読めない**（connpass は本文が空の 202、CodeZine は 403）。Claude in Chrome が使えるならブラウザで開いて読む。CodeZine は最初に「アクセス確認」画面が出るが、数秒待てば本文が表示される。CAPTCHA が出たら突破せず、そのサイトは飛ばす。
+- connpass の一覧から各イベントの URL を集めるには、ページ上で `a[href*="/event/"]` を集める JS が速い。
+- connpass のイベントページでは、`[class*="schedule"]` 要素に日時、`[class*="place"]` 要素に会場が入っている。ページ内に「オンライン配信」「ハイブリッド」の記載があるかどうかで `mode` を決める。
+- connpass の期間指定検索: `https://connpass.com/search/?q=カンファレンス&start_from=YYYY/MM/DD&start_to=YYYY/MM/DD`
+- 同じタブで連続して開くときは、ページ遷移の直後に1秒ほど待ってから JS を実行する（待たないと評価中に遷移してエラーになる）。
+- **connpass 検索は一括取得できる**: connpass.com のページを開いた状態なら、`fetch('/search/?q=...&start_from=...&start_to=...&page=N')` が同一オリジンで通る。`DOMParser` で `.event_list` を解析すると、定員（`n/m人`）とタイトルで一気にふるいにかけられる。キーワード × 4〜5ページを回し、定員 100 人以上か、タイトルに Kaigi / Summit / Conference / カンファレンス / Day / JAWS を含むものだけ残す。各イベントページはグループのサブドメインにあり、fetch ではアクセスが拒否される（CORS）ので、残った候補だけブラウザで開いて裏付けを取る。
+- **JAWS-UG**: トップページのカレンダーのリンク先は Google カレンダーなので、イベントページへは connpass 検索（`q=JAWS`）から行く。支部のもくもく会のような少人数の会は除き、大型・オンライン配信・定番企画（re:Invent 関連、大晦日の LT など）を採る。
+- **dev.events**: 詳細ページ `/conferences/<slug>` を同一オリジンで fetch すると公式 URL が取れる。リンク先が `principal.dev`（広告）のものは公式 URL ではないので、別途調べる。
+- **AWS 公式のイベントページ**（aws.amazon.com/jp/events/）は 2026-11 時点で 2025 年の内容のまま更新されておらず、日本の予定は取れなかった。AWS Summit Japan などは、個別の告知ページか Web 検索で探す。
+- **Google Cloud Webinars** は海外向けのウェビナーが中心で、2026-11 時点では日本のイベントが見当たらなかった。
+- **TECH PLAY / Doorkeeper**: 「カンファレンス」で検索すると、企業主催の大型イベントが拾える。イベントページの「開催日時」「開催形式」「会場」の行をそのまま使う。
+
+追加の探し方の例:
+- `"カンファレンス" 2027年1月 エンジニア`、`Tech Conference Japan <月>` のような検索
+- 各カンファレンスの公式サイト、TECH PLAY、Doorkeeper、connpass のイベントページ
+- 主要テーマ（AI / Cloud / Security / Frontend / Data / SRE / Mobile など）ごとの検索
+
+## 3. 採用基準
+- 日本国内での開催、またはオンライン開催。
+- 「カンファレンス規模」または「参加者 30 人以上の勉強会」を優先する。
+- **日時・形式・会場は、各イベントの公式ページ（または申込ページ）で裏付けが取れたものだけ書く。** まとめ記事だけを根拠にしない。推測で埋めない。
+- 日付が確認できても時刻が分からないときは、公式ページにある開場・開始時刻を使う。どうしても分からなければ `start` を `T10:00:00+09:00` とし、`description` に「時刻未確認」と書く。
+- 複数日にわたるイベントは、`start` を初日の開始、`end` を最終日の終了にする。
+
+## 4. スキーマ（`lib/schema.ts` が正）
+```json
+{
+  "id": "一意な slug (例: connpass-123456 / jsconf-jp-2026)",
+  "title": "イベント名",
+  "url": "公式ページの URL (https://...)",
+  "start": "2026-11-27T18:00:00+09:00",
+  "end": "2026-11-27T20:00:00+09:00",
+  "mode": "offline | online | hybrid",
+  "venue": "会場名 (offline / hybrid のときのみ)",
+  "tags": ["AI", "Security"],
+  "source": "connpass | codezine | official | web",
+  "description": "1〜2 文の概要 (任意)"
+}
+```
+- 日時は必ず `+09:00` 付きの ISO 8601 で書く。
+- `tags` は英語の短い名詞で 1〜4 個。既存のタグ名を優先して表記ゆれを避ける（例: `AI`, `Security`, `Cloud`, `Frontend`, `Backend`, `Infrastructure`, `Data`, `SRE`, `Mobile`, `Design`, `Agile`, `Kubernetes`, `MLOps`）。
+
+## 5. マージと書き出し
+- `id` が同じものは、新しい情報で上書きする。
+- 終了日時から 30 日以上たったイベントと、`source` が `"sample"` のものは削除する。
+- `start` の昇順に並べ、JSON 配列だけを `data/events.json` に書き出す。
+
+## 6. 検証
+- `npm run validate` を実行する。失敗したら修正し、通るまで繰り返す。
+- 最後に、追加・更新・削除の件数と、裏付けが弱かったため見送ったイベントを短く報告する。

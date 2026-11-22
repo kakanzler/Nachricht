@@ -1,0 +1,622 @@
+[
+  {
+    "id": "connpass-406980",
+    "title": "テック無尽 2026 - 山梨ITコミュニティ合同イベント",
+    "url": "https://techmujin.connpass.com/event/406980/",
+    "start": "2026-11-22T09:30:00+09:00",
+    "end": "2026-11-22T17:00:00+09:00",
+    "mode": "offline",
+    "venue": "山梨大学 甲府キャンパス 共創環境棟",
+    "tags": [
+      "Community"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-398565",
+    "title": "Open Source Conference 2026 Yamaguchi",
+    "url": "https://ospn.connpass.com/event/398565/",
+    "start": "2026-11-22T10:45:00+09:00",
+    "end": "2026-11-22T17:00:00+09:00",
+    "mode": "hybrid",
+    "venue": "常盤工業会館（山口県宇部市）",
+    "tags": [
+      "OSS"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-412587",
+    "title": "生成AI 全社展開 Forum｜AI Market Focus",
+    "url": "https://ai-market-seminar.connpass.com/event/412587/",
+    "start": "2026-11-24T13:00:00+09:00",
+    "end": "2026-11-24T18:10:00+09:00",
+    "mode": "online",
+    "tags": [
+      "AI",
+      "Security"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-409917",
+    "title": "DBRE Summit 2026",
+    "url": "https://mercari.connpass.com/event/409917/",
+    "start": "2026-11-25T19:00:00+09:00",
+    "end": "2026-11-25T21:30:00+09:00",
+    "mode": "offline",
+    "venue": "メルカリ 東京オフィス（六本木ヒルズ森タワー）",
+    "tags": [
+      "Database",
+      "SRE"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "techplay-999842",
+    "title": "アーキテクチャConference 2026",
+    "url": "https://techplay.jp/event/999842",
+    "start": "2026-11-26T09:25:00+09:00",
+    "end": "2026-11-27T18:55:00+09:00",
+    "mode": "hybrid",
+    "tags": [
+      "Architecture",
+      "Backend"
+    ],
+    "source": "techplay"
+  },
+  {
+    "id": "techplay-1002440",
+    "title": "SAKURA DEKIRU Conference 2026",
+    "url": "https://techplay.jp/event/1002440",
+    "start": "2026-11-26T14:00:00+09:00",
+    "end": "2026-11-26T20:00:00+09:00",
+    "mode": "hybrid",
+    "venue": "ベルサール渋谷ファースト",
+    "tags": [
+      "Cloud",
+      "AI",
+      "Infrastructure"
+    ],
+    "source": "techplay",
+    "description": "さくらインターネット主催。参加無料、13:00 開場。"
+  },
+  {
+    "id": "jpug-pgcon2026",
+    "title": "PostgreSQL Conference Japan 2026",
+    "url": "https://www.postgresql.jp/jpug-pgcon2026",
+    "start": "2026-11-27T10:00:00+09:00",
+    "end": "2026-11-27T18:10:00+09:00",
+    "mode": "offline",
+    "venue": "AP東京八重洲 7F",
+    "tags": [
+      "Database",
+      "OSS"
+    ],
+    "source": "dev.events",
+    "description": "日本PostgreSQLユーザ会主催。18:30 から懇親会。"
+  },
+  {
+    "id": "connpass-408911",
+    "title": "Business Technology Conference Japan 2026",
+    "url": "https://corp-engr.connpass.com/event/408911/",
+    "start": "2026-11-27T11:00:00+09:00",
+    "end": "2026-11-28T19:00:00+09:00",
+    "mode": "hybrid",
+    "venue": "LINEヤフー 東京ガーデンテラス紀尾井町",
+    "tags": [
+      "Corporate IT",
+      "Security",
+      "AI"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-401179",
+    "title": "スクラムフェス沖縄2026",
+    "url": "https://scrumokinawa.connpass.com/event/401179/",
+    "start": "2026-11-27T16:30:00+09:00",
+    "end": "2026-11-28T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "沖縄県男女共同参画センター てぃるる",
+    "tags": [
+      "Agile",
+      "Management"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "doorkeeper-jjug-199505",
+    "title": "JJUG CCC 2026 Fall",
+    "url": "https://jjug.doorkeeper.jp/events/199505",
+    "start": "2026-11-28T10:00:00+09:00",
+    "end": "2026-11-28T17:15:00+09:00",
+    "mode": "offline",
+    "venue": "ベルサール新宿グランド コンファレンスセンター",
+    "tags": [
+      "Java",
+      "Backend"
+    ],
+    "source": "doorkeeper",
+    "description": "現地開催のみ、オンライン配信・アーカイブなし。"
+  },
+  {
+    "id": "connpass-405628",
+    "title": "Google Developer Group DevFest Tokyo 2026",
+    "url": "https://gdg-tokyo.connpass.com/event/405628/",
+    "start": "2026-11-29T12:00:00+09:00",
+    "end": "2026-11-29T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "JPタワー ホール＆カンファレンス（KITTE 4F）",
+    "tags": [
+      "AI",
+      "Cloud",
+      "Design"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "gartner-io-cloud-japan-2026",
+    "title": "ガートナー ITインフラストラクチャ、オペレーション & クラウド戦略コンファレンス2026",
+    "url": "https://www.gartner.com/jp/conferences/apac/infrastructure-operations-cloud-japan",
+    "start": "2026-12-01T10:00:00+09:00",
+    "end": "2026-12-03T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "東京",
+    "tags": [
+      "Infrastructure",
+      "Cloud"
+    ],
+    "source": "dev.events",
+    "description": "有料の商用カンファレンス。開催日は公式サイトで確認済み、時刻・会場の詳細は未確認。"
+  },
+  {
+    "id": "connpass-408824",
+    "title": "JAWS-UG横浜 #105 AWS re:Invent 2026 現地生配信",
+    "url": "https://jawsug-yokohama.connpass.com/event/408824/",
+    "start": "2026-12-02T12:00:00+09:00",
+    "end": "2026-12-02T13:00:00+09:00",
+    "mode": "online",
+    "tags": [
+      "AWS",
+      "Cloud"
+    ],
+    "source": "jaws-ug"
+  },
+  {
+    "id": "connpass-400834",
+    "title": "Okinawa Open Days 2026",
+    "url": "https://ool.connpass.com/event/400834/",
+    "start": "2026-12-02T13:00:00+09:00",
+    "end": "2026-12-04T17:00:00+09:00",
+    "mode": "offline",
+    "venue": "沖縄県市町村自治会館",
+    "tags": [
+      "OSS",
+      "Cloud",
+      "Network",
+      "AI"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "techplay-1002530",
+    "title": "AI前提の開発、セキュリティはどう変わる？【TECH PLAY Conference】",
+    "url": "https://techplay.jp/event/1002530",
+    "start": "2026-12-02T19:00:00+09:00",
+    "end": "2026-12-02T20:30:00+09:00",
+    "mode": "online",
+    "tags": [
+      "Security",
+      "AI"
+    ],
+    "source": "techplay",
+    "description": "バルテス／クラウドエース／レッドハット登壇。"
+  },
+  {
+    "id": "rubyworld-conf-2026",
+    "title": "RubyWorld Conference 2026",
+    "url": "https://2026.rubyworld-conf.org/ja/",
+    "start": "2026-12-03T10:00:00+09:00",
+    "end": "2026-12-04T16:40:00+09:00",
+    "mode": "offline",
+    "venue": "くにびきメッセ（島根県松江市）",
+    "tags": [
+      "Ruby"
+    ],
+    "source": "codezine",
+    "description": "Ruby の国内最大のビジネスカンファレンス。参加費 6,000円ほか（事前登録制）。"
+  },
+  {
+    "id": "connpass-406506",
+    "title": "Open Source Conference 2026 Okinawa",
+    "url": "https://ospn.connpass.com/event/406506/",
+    "start": "2026-12-05T10:00:00+09:00",
+    "end": "2026-12-05T17:00:00+09:00",
+    "mode": "offline",
+    "venue": "沖縄県市町村自治会館 4F",
+    "tags": [
+      "OSS"
+    ],
+    "source": "connpass",
+    "description": "オンライン配信は検討中、アーカイブ公開予定。"
+  },
+  {
+    "id": "connpass-404589",
+    "title": "Kernel/VM探検隊@北陸 Part 9",
+    "url": "https://kernelvm.connpass.com/event/404589/",
+    "start": "2026-12-05T10:30:00+09:00",
+    "end": "2026-12-05T17:00:00+09:00",
+    "mode": "offline",
+    "venue": "近江町いちば館 4階集会室（石川県金沢市）",
+    "tags": [
+      "Linux",
+      "Infrastructure"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "open-source-summit-japan-2026",
+    "title": "Open Source Summit Japan 2026",
+    "url": "https://events.linuxfoundation.org/open-source-summit-japan/",
+    "start": "2026-12-07T10:00:00+09:00",
+    "end": "2026-12-09T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "虎ノ門ヒルズフォーラム",
+    "tags": [
+      "OSS",
+      "Linux"
+    ],
+    "source": "codezine",
+    "description": "The Linux Foundation 主催。開催日は公式サイトで確認済み、時刻未確認。"
+  },
+  {
+    "id": "connpass-409312",
+    "title": "PM×SE Conference 2026",
+    "url": "https://findy.connpass.com/event/409312/",
+    "start": "2026-12-08T13:20:00+09:00",
+    "end": "2026-12-09T19:10:00+09:00",
+    "mode": "online",
+    "tags": [
+      "Management",
+      "AI"
+    ],
+    "source": "techplay"
+  },
+  {
+    "id": "one-summit-japan-2026",
+    "title": "ONE Summit Japan 2026",
+    "url": "https://events.linuxfoundation.org/open-networking-edge-summit-japan/",
+    "start": "2026-12-10T10:00:00+09:00",
+    "end": "2026-12-11T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "東京",
+    "tags": [
+      "Network",
+      "Infrastructure",
+      "OSS"
+    ],
+    "source": "dev.events",
+    "description": "Linux Foundation 主催のネットワーク／エッジのイベント。開催日は公式サイトで確認済み、時刻・会場の詳細は未確認。"
+  },
+  {
+    "id": "pytorch-day-japan-2026",
+    "title": "PyTorch Day Japan 2026",
+    "url": "https://events.linuxfoundation.org/pytorch-day-japan/",
+    "start": "2026-12-10T10:00:00+09:00",
+    "mode": "offline",
+    "venue": "東京",
+    "tags": [
+      "AI",
+      "OSS"
+    ],
+    "source": "dev.events",
+    "description": "PyTorch Foundation 主催。開催日は公式サイトで確認済み、時刻・会場の詳細は未確認。"
+  },
+  {
+    "id": "doorkeeper-kusanagi-199999",
+    "title": "KUSANAGIサミット2026 〜AIで激増するWebのセキュリティリスク、各レイヤーでどう守る？〜",
+    "url": "https://enterprise-wordpress.doorkeeper.jp/events/199999",
+    "start": "2026-12-10T14:00:00+09:00",
+    "end": "2026-12-10T18:00:00+09:00",
+    "mode": "online",
+    "tags": [
+      "Security",
+      "Infrastructure"
+    ],
+    "source": "doorkeeper",
+    "description": "Zoom ウェビナー。"
+  },
+  {
+    "id": "connpass-407897",
+    "title": "オープンソースカンファレンス2026 Fukuoka",
+    "url": "https://ospn.connpass.com/event/407897/",
+    "start": "2026-12-12T10:00:00+09:00",
+    "end": "2026-12-12T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "福岡大学 A棟 7F",
+    "tags": [
+      "OSS"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-412167",
+    "title": "Developers Boost 2026",
+    "url": "https://devsumi.connpass.com/event/412167/",
+    "start": "2026-12-12T10:00:00+09:00",
+    "end": "2026-12-12T19:40:00+09:00",
+    "mode": "offline",
+    "venue": "秋葉原UDX Gallery Hall",
+    "tags": [
+      "Career",
+      "AI",
+      "Management"
+    ],
+    "source": "connpass",
+    "description": "10:00 ハンズオン、13:00 セッション開始。参加無料（事前登録制）、有料ワークショップあり。"
+  },
+  {
+    "id": "techplay-1001639",
+    "title": "AI Engineering Summit Tokyo 2026",
+    "url": "https://techplay.jp/event/1001639",
+    "start": "2026-12-14T09:30:00+09:00",
+    "end": "2026-12-15T18:30:00+09:00",
+    "mode": "hybrid",
+    "tags": [
+      "AI"
+    ],
+    "source": "techplay"
+  },
+  {
+    "id": "connpass-411543",
+    "title": "Ops-JAWS Meetup44 2026年Ops系アップデート ＆ 運営LT",
+    "url": "https://opsjaws.connpass.com/event/411543/",
+    "start": "2026-12-16T19:00:00+09:00",
+    "end": "2026-12-16T21:00:00+09:00",
+    "mode": "hybrid",
+    "venue": "麻布台ヒルズ森JPタワー 36F",
+    "tags": [
+      "AWS",
+      "SRE"
+    ],
+    "source": "jaws-ug",
+    "description": "LT 大会はライブ配信あり。"
+  },
+  {
+    "id": "connpass-401200",
+    "title": "JAWS-UG Presents - AI Builders Day 2026",
+    "url": "https://jawsug.connpass.com/event/401200/",
+    "start": "2026-12-19T12:30:00+09:00",
+    "end": "2026-12-19T18:00:00+09:00",
+    "mode": "hybrid",
+    "venue": "AWS Japan 麻布台オフィス（麻布台ヒルズ 森JPタワー 35F）",
+    "tags": [
+      "AI",
+      "Cloud",
+      "AWS"
+    ],
+    "source": "connpass",
+    "description": "AWS で AI エージェントを作る開発者向け。参加無料、セッションはオンライン配信あり。"
+  },
+  {
+    "id": "connpass-408629",
+    "title": "ことならテックカンファレンス2026",
+    "url": "https://kotonara.connpass.com/event/408629/",
+    "start": "2026-12-19T13:00:00+09:00",
+    "end": "2026-12-19T20:00:00+09:00",
+    "mode": "offline",
+    "venue": "BONCHI（奈良県奈良市）",
+    "tags": [
+      "PHP",
+      "Frontend",
+      "AI"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-413470",
+    "title": "JAWS-UG AI/ML #44：AWS re:Invent 2026 Recap",
+    "url": "https://jawsug-ai.connpass.com/event/413470/",
+    "start": "2026-12-21T19:00:00+09:00",
+    "end": "2026-12-21T21:00:00+09:00",
+    "mode": "online",
+    "tags": [
+      "AWS",
+      "AI"
+    ],
+    "source": "jaws-ug"
+  },
+  {
+    "id": "connpass-413895",
+    "title": "mini Security-JAWS［第57回］アップデートチェック会",
+    "url": "https://s-jaws.connpass.com/event/413895/",
+    "start": "2026-12-26T10:00:00+09:00",
+    "end": "2026-12-26T12:00:00+09:00",
+    "mode": "online",
+    "tags": [
+      "AWS",
+      "Security"
+    ],
+    "source": "jaws-ug"
+  },
+  {
+    "id": "connpass-413145",
+    "title": "JAWS-UG東京 大晦日の裏番組 〜紅白LT合戦〜",
+    "url": "https://jawsug.connpass.com/event/413145/",
+    "start": "2026-12-31T19:00:00+09:00",
+    "end": "2026-12-31T20:00:00+09:00",
+    "mode": "online",
+    "tags": [
+      "AWS"
+    ],
+    "source": "jaws-ug",
+    "description": "YouTube Live で配信。"
+  },
+  {
+    "id": "connpass-408379",
+    "title": "PHPカンファレンス関西2026",
+    "url": "https://phpkansai.connpass.com/event/408379/",
+    "start": "2027-01-16T10:00:00+09:00",
+    "end": "2027-01-16T17:30:00+09:00",
+    "mode": "offline",
+    "venue": "京都リサーチパーク4号館",
+    "tags": [
+      "PHP"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-412008",
+    "title": "AlmaLinux Day Tokyo 2027",
+    "url": "https://almalinux.connpass.com/event/412008/",
+    "start": "2027-01-20T13:00:00+09:00",
+    "end": "2027-01-20T20:00:00+09:00",
+    "mode": "hybrid",
+    "venue": "GMOインターネットグループ 第二本社 GMO Yours・フクラス",
+    "tags": [
+      "Linux",
+      "OSS",
+      "Infrastructure"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-412239",
+    "title": "オープンソースカンファレンス2027 Osaka",
+    "url": "https://ospn.connpass.com/event/412239/",
+    "start": "2027-01-30T10:00:00+09:00",
+    "end": "2027-01-30T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "大阪産業創造館",
+    "tags": [
+      "OSS"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-405504",
+    "title": "第12回 Azure Travelers 勉強会 秋田の旅",
+    "url": "https://jat.connpass.com/event/405504/",
+    "start": "2027-01-30T10:30:00+09:00",
+    "end": "2027-01-30T17:00:00+09:00",
+    "mode": "hybrid",
+    "venue": "にぎわい交流館AU 4F（秋田県秋田市）",
+    "tags": [
+      "Azure",
+      "Cloud"
+    ],
+    "source": "connpass",
+    "description": "オンライン配信は一部セッションのみ。"
+  },
+  {
+    "id": "connpass-406016",
+    "title": "北九州Techカンファレンス2026",
+    "url": "https://kitaqtechcon.connpass.com/event/406016/",
+    "start": "2027-02-06T13:00:00+09:00",
+    "end": "2027-02-06T20:30:00+09:00",
+    "mode": "offline",
+    "venue": "麻生情報ビジネス専門学校 北九州校",
+    "tags": [
+      "Community"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-408455",
+    "title": "【第16回】サイバーセキュリティ勉強会2027冬 in 塩尻",
+    "url": "https://shiojiri-cyber.connpass.com/event/408455/",
+    "start": "2027-02-06T13:00:00+09:00",
+    "end": "2027-02-06T17:00:00+09:00",
+    "mode": "hybrid",
+    "venue": "塩尻インキュベーションプラザ（長野県塩尻市）",
+    "tags": [
+      "Security"
+    ],
+    "source": "connpass",
+    "description": "Zoom ウェビナーでのオンライン参加あり。"
+  },
+  {
+    "id": "connpass-410624",
+    "title": "SRE NEXT mini in HIROSHIMA 2027",
+    "url": "https://sre-lounge.connpass.com/event/410624/",
+    "start": "2027-02-13T09:00:00+09:00",
+    "end": "2027-02-13T19:00:00+09:00",
+    "mode": "offline",
+    "venue": "RCC文化センター（広島駅前）",
+    "tags": [
+      "SRE"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-407167",
+    "title": "GopherCon Japan 2027",
+    "url": "https://gopherconjp.connpass.com/event/407167/",
+    "start": "2027-02-13T10:00:00+09:00",
+    "end": "2027-02-14T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "Abema Towers（東京都渋谷区）",
+    "tags": [
+      "Go",
+      "Backend"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "connpass-410021",
+    "title": "Developers Summit 2027",
+    "url": "https://devsumi.connpass.com/event/410021/",
+    "start": "2027-02-17T11:00:00+09:00",
+    "end": "2027-02-19T18:40:00+09:00",
+    "mode": "offline",
+    "venue": "有明セントラルタワーホール＆カンファレンス",
+    "tags": [
+      "Management",
+      "AI",
+      "Career"
+    ],
+    "source": "connpass",
+    "description": "オンライン配信の予定なし。"
+  },
+  {
+    "id": "connpass-406560",
+    "title": "SECCON 15 Open Conference",
+    "url": "https://seccon.connpass.com/event/406560/",
+    "start": "2027-02-20T10:00:00+09:00",
+    "end": "2027-02-21T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "浅草橋ヒューリックホール＆ヒューリックカンファレンス",
+    "tags": [
+      "Security"
+    ],
+    "source": "connpass"
+  },
+  {
+    "id": "srekaigi-2027",
+    "title": "SRE Kaigi 2027",
+    "url": "https://2027.srekaigi.net/",
+    "start": "2027-02-20T10:00:00+09:00",
+    "mode": "hybrid",
+    "venue": "中野セントラルパーク カンファレンス",
+    "tags": [
+      "SRE",
+      "Infrastructure"
+    ],
+    "source": "official",
+    "description": "オフライン＋一部オンライン。開催日・会場は公式サイトで確認済み、時刻未確認。"
+  },
+  {
+    "id": "connpass-409477",
+    "title": "PyCon mini Shizuoka 2027",
+    "url": "https://pycon-shizu.connpass.com/event/409477/",
+    "start": "2027-02-27T10:00:00+09:00",
+    "end": "2027-02-27T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "静岡市 コ・クリエーションスペース（ペガサート7F）",
+    "tags": [
+      "Python"
+    ],
+    "source": "connpass"
+  }
+]
