@@ -5,6 +5,8 @@ import { isPast, jst, todayKey } from "@/lib/date";
 import type { EventItem, EventMode } from "@/lib/schema";
 import EventList from "./EventList";
 import FilterPopover from "./FilterPopover";
+import { useI18n } from "./I18n";
+import LangSwitch from "./LangSwitch";
 import MiniCalendar from "./MiniCalendar";
 
 const MODES: EventMode[] = ["offline", "online", "hybrid"];
@@ -21,6 +23,7 @@ const list = (v: string | null) => (v ? v.split(",").map((s) => s.trim()).filter
 type Props = { events: EventItem[]; serverToday: string };
 
 export default function Portal({ events, serverToday }: Props) {
+  const { locale, t } = useI18n();
   const [query, setQuery] = useState("");
   const [tags, setTags] = useState<Set<string>>(new Set());
   const [modes, setModes] = useState<Set<EventMode>>(new Set());
@@ -72,12 +75,13 @@ export default function Portal({ events, serverToday }: Props) {
     if (modes.size) p.set("mode", [...modes].join(","));
     if (showPast) p.set("past", "1");
     if (selected) p.set("date", selected);
+    if (locale !== "ja") p.set("lang", locale);
     const qs = p.toString();
     const next = `${window.location.pathname}${qs ? `?${qs}` : ""}${window.location.hash}`;
     if (next !== `${window.location.pathname}${window.location.search}${window.location.hash}`) {
       window.history.replaceState(null, "", next);
     }
-  }, [urlReady, query, tags, modes, showPast, selected]);
+  }, [urlReady, query, tags, modes, showPast, selected, locale]);
 
   const allTags = useMemo(() => [...new Set(events.flatMap((e) => e.tags))], [events]);
 
@@ -110,8 +114,8 @@ export default function Portal({ events, serverToday }: Props) {
   };
 
   return (
-    <div className="mx-auto min-h-screen max-w-7xl md:grid md:grid-cols-[17rem_1fr]">
-      <aside className="border-rule px-4 pt-5 md:sticky md:top-0 md:h-screen md:border-r md:px-5">
+    <div className="min-h-screen md:grid md:grid-cols-[17rem_1fr]">
+      <aside className="surface-bright border-rule bg-surface px-4 pt-5 md:sticky md:top-0 md:h-screen md:border-r md:px-5">
         <div className="flex items-center justify-between md:block">
           <h1 className="grad-text text-3xl font-bold tracking-tight md:mb-1">Nachricht</h1>
           <button
@@ -120,10 +124,10 @@ export default function Portal({ events, serverToday }: Props) {
             aria-expanded={calOpen}
             onClick={() => setCalOpen((v) => !v)}
           >
-            {calOpen ? "閉じる" : "カレンダー"}
+            {calOpen ? t.calendarClose : t.calendarOpen}
           </button>
         </div>
-        <p className="hidden text-xs text-ink-faint md:block">IT Event Portal</p>
+        <p className="hidden text-xs text-ink-faint md:block">{t.tagline}</p>
         <div className={`${calOpen ? "block" : "hidden"} mt-4 md:mt-8 md:block`}>
           <MiniCalendar
             year={cal.year}
@@ -138,24 +142,24 @@ export default function Portal({ events, serverToday }: Props) {
             }}
           />
           <p className="mt-6 hidden text-xs leading-relaxed text-ink-faint md:block">
-            {visible.length} / {events.length} 件を表示中
+            {t.showing(visible.length, events.length)}
           </p>
         </div>
       </aside>
 
       <main className="min-w-0">
-        <header className="sticky top-0 z-20 flex items-center gap-4 border-b border-rule bg-surface/90 px-4 py-4 backdrop-blur sm:px-6">
+        <header className="surface-bright sticky top-0 z-20 flex items-center gap-3 border-b border-rule bg-surface/90 px-4 py-4 backdrop-blur sm:gap-4 sm:px-6">
           <label className="neu-inset flex h-11 max-w-md flex-1 items-center gap-2 rounded-full px-4">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink-faint)" strokeWidth="2" aria-hidden>
               <circle cx="11" cy="11" r="7" />
               <path d="m20 20-3.5-3.5" strokeLinecap="round" />
             </svg>
-            <span className="sr-only">イベントを検索</span>
+            <span className="sr-only">{t.searchLabel}</span>
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search for ..."
+              placeholder={t.searchPlaceholder}
               className="w-full bg-transparent text-sm text-ink outline-none placeholder:text-ink-faint"
             />
           </label>
@@ -184,9 +188,14 @@ export default function Portal({ events, serverToday }: Props) {
               setSelected(null);
             }}
           />
+          <div className="ml-auto">
+            <LangSwitch />
+          </div>
         </header>
 
-        <EventList events={visible} selectedDate={selected} activeTags={tags} onTagClick={(t) => setTags((s) => toggle(s, t))} />
+        <div className="max-w-[63rem]">
+          <EventList events={visible} selectedDate={selected} activeTags={tags} onTagClick={(tag) => setTags((s) => toggle(s, tag))} />
+        </div>
       </main>
     </div>
   );

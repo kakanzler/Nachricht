@@ -1,5 +1,7 @@
 "use client";
 
+import { useI18n } from "./I18n";
+
 type Props = {
   year: number;
   month: number; // 1-12
@@ -10,12 +12,11 @@ type Props = {
   onSelect: (dateKey: string) => void;
 };
 
-const WEEK = ["日", "月", "火", "水", "木", "金", "土"];
-
 const key = (y: number, m: number, d: number) =>
   `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
 
 export default function MiniCalendar({ year, month, today, selected, eventDays, onMonthChange, onSelect }: Props) {
+  const { t } = useI18n();
   // Pure calendar arithmetic in UTC so the host timezone never shifts days.
   const firstDow = new Date(Date.UTC(year, month - 1, 1)).getUTCDay();
   const cells = Array.from({ length: 42 }, (_, i) => {
@@ -35,15 +36,15 @@ export default function MiniCalendar({ year, month, today, selected, eventDays, 
     <div className="neu-raised rounded-3xl p-4 select-none">
       <div className="mb-3 flex items-center justify-between">
         <span className="text-sm font-medium text-ink">
-          {year}年 {month}月
+          {t.calTitle(year, month)}
         </span>
         <div className="flex gap-2">
-          <NavBtn label="前の月" onClick={() => shift(-1)}>‹</NavBtn>
-          <NavBtn label="次の月" onClick={() => shift(1)}>›</NavBtn>
+          <NavBtn label={t.prevMonth} onClick={() => shift(-1)}>‹</NavBtn>
+          <NavBtn label={t.nextMonth} onClick={() => shift(1)}>›</NavBtn>
         </div>
       </div>
       <div className="grid grid-cols-7 gap-y-1 text-center text-[11px]">
-        {WEEK.map((w, i) => (
+        {t.week.map((w, i) => (
           <span key={w} className={`pb-1 ${i === 0 ? "text-[#e0568f]" : i === 6 ? "text-[#5b7cf0]" : "text-ink-faint"}`}>
             {w}
           </span>
@@ -57,7 +58,7 @@ export default function MiniCalendar({ year, month, today, selected, eventDays, 
               key={c.k}
               type="button"
               onClick={() => onSelect(c.k)}
-              aria-label={`${c.k}${has ? "（イベントあり）" : ""}`}
+              aria-label={`${c.k}${has ? t.hasEvents : ""}`}
               aria-pressed={isSel}
               className={`relative mx-auto flex h-7 w-7 cursor-pointer items-center justify-center rounded-full text-xs transition ${
                 isSel

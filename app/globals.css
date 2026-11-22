@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --surface: #e8ebf0;
-  --shadow-dark: #c5cad3;
+  /* event list area: a slightly cool grey so the white chrome stands apart */
+  --surface: #e9edf4;
+  --shadow-dark: #c6ccd7;
   --shadow-light: #ffffff;
-  /* contrast on --surface: 10.4 / 5.2 / 4.6 (all ≥ WCAG AA 4.5) */
+  /* contrast on --surface: ≥ 4.5 for ink / ink-soft / ink-faint (WCAG AA) */
   --ink: #2f3441;
   --ink-soft: #5b6170;
   --ink-faint: #636978;
@@ -32,6 +33,14 @@ body {
   font-family: var(--font-sans);
 }
 
+/* sidebar + search header: brightest white. Re-scopes the surface tokens so the
+   neumorphic utilities inside keep working on a white base. */
+@utility surface-bright {
+  --surface: #ffffff;
+  --shadow-dark: #d6dbe3;
+  --shadow-light: #ffffff;
+}
+
 @utility neu-raised {
   background-color: var(--surface);
   box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
@@ -45,6 +54,41 @@ body {
 @utility neu-inset {
   background-color: var(--surface);
   box-shadow: inset 4px 4px 9px var(--shadow-dark), inset -4px -4px 9px var(--shadow-light);
+}
+
+/* Hovered event row: the gradient slides in from the right (ease-out) and, when
+   the pointer leaves, slides back out to the right (ease-in). */
+@utility row-highlight {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    /* starts in the page background colour, then the requested purples mixed ~50% with white */
+    background-image: linear-gradient(90deg, var(--surface), var(--surface) 11%, #e5dbfd 36%, #cdc7fe 61%, #cd9dff);
+    transform: translateX(101%);
+    transition: transform 420ms cubic-bezier(0.55, 0, 0.8, 0.25);
+  }
+  /* hover only on real pointers (no sticky highlight after a tap); keyboard focus too */
+  @media (hover: hover) {
+    &:hover::before {
+      transform: translateX(0);
+      transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+  &:has(:focus-visible)::before {
+    transform: translateX(0);
+    transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    &::before {
+      transition: none !important;
+    }
+  }
 }
 
 @utility grad-primary {

@@ -1,3 +1,4 @@
+import type { Locale } from "./i18n";
 import type { EventItem } from "./schema";
 
 const TZ = "Asia/Tokyo";
@@ -45,11 +46,13 @@ export function jst(iso: string | number | Date): JstParts {
 const MONTH_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 export const monthShort = (m: number) => MONTH_SHORT[m - 1];
 
-export function timeRange(e: EventItem): string {
+export function timeRange(e: EventItem, locale: Locale = "ja"): string {
   const s = jst(e.start);
   const t = e.end ? jst(e.end) : null;
   if (e.timeTbd) {
-    return t && t.dateKey !== s.dateKey ? `時刻未定（〜${t.month}/${t.day}）` : "時刻未定";
+    const tbd = locale === "en" ? "Time TBD" : "時刻未定";
+    if (!t || t.dateKey === s.dateKey) return tbd;
+    return locale === "en" ? `${tbd} (until ${t.month}/${t.day})` : `${tbd}（〜${t.month}/${t.day}）`;
   }
   if (!t) return s.time;
   return t.dateKey === s.dateKey ? `${s.time}~${t.time}` : `${s.time}~${t.month}/${t.day} ${t.time}`;

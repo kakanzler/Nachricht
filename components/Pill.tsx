@@ -1,6 +1,9 @@
+"use client";
+
 import type { CSSProperties } from "react";
 import type { EventItem } from "@/lib/schema";
 import { tagColor } from "@/lib/tagColor";
+import { useI18n } from "./I18n";
 
 const MODE_STYLE: Record<EventItem["mode"], string> = {
   offline: "bg-[#dbe7f6] text-[#2350c8] border-[#5b8be6]",
@@ -9,7 +12,8 @@ const MODE_STYLE: Record<EventItem["mode"], string> = {
 };
 
 export function ModePill({ event }: { event: EventItem }) {
-  const venue = event.venue && event.venueTbd ? `${event.venue}（会場未定）` : event.venue;
+  const { t } = useI18n();
+  const venue = event.venue && event.venueTbd ? `${event.venue}${t.venueTbd}` : event.venue;
   const label = venue && event.mode !== "online" ? `${event.mode} @ ${venue}` : event.mode;
   return (
     <span

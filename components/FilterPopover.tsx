@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { EventMode } from "@/lib/schema";
 import { groupTags } from "@/lib/tagGroups";
+import { useI18n } from "./I18n";
 import { TagPill } from "./Pill";
 
 const MODES: EventMode[] = ["offline", "online", "hybrid"];
@@ -20,6 +21,7 @@ type Props = {
 };
 
 export default function FilterPopover(p: Props) {
+  const { locale, t } = useI18n();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const activeCount = p.tags.size + p.modes.size + (p.showPast ? 1 : 0);
@@ -42,7 +44,7 @@ export default function FilterPopover(p: Props) {
     <div ref={ref} className="relative">
       <button
         type="button"
-        aria-label="フィルター"
+        aria-label={t.filter}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         className={`relative flex h-11 w-11 cursor-pointer items-center justify-center rounded-full transition ${
@@ -72,7 +74,7 @@ export default function FilterPopover(p: Props) {
 
       {open && (
         <div className="neu-raised absolute right-0 z-30 mt-3 w-[min(22rem,calc(100vw-2rem))] rounded-3xl p-5">
-          <h3 className="mb-2 text-xs font-semibold tracking-wider text-ink-faint uppercase">開催形式</h3>
+          <h3 className="mb-2 text-xs font-semibold tracking-wider text-ink-faint uppercase">{t.filterMode}</h3>
           <div className="mb-4 flex gap-2">
             {MODES.map((m) => {
               const on = p.modes.has(m);
@@ -92,20 +94,20 @@ export default function FilterPopover(p: Props) {
             })}
           </div>
 
-          <h3 className="mb-2 text-xs font-semibold tracking-wider text-ink-faint uppercase">タグ</h3>
+          <h3 className="mb-2 text-xs font-semibold tracking-wider text-ink-faint uppercase">{t.filterTags}</h3>
           <div className="mb-4 max-h-[min(22rem,50vh)] space-y-3 overflow-y-auto p-1">
             {groupTags(p.allTags).map((g) => {
               const allOn = g.tags.every((t) => p.tags.has(t));
               return (
                 <div key={g.label}>
                   <div className="mb-1.5 flex items-center justify-between">
-                    <span className="text-xs font-medium text-ink-soft">{g.label}</span>
+                    <span className="text-xs font-medium text-ink-soft">{locale === "en" ? g.labelEn : g.label}</span>
                     <button
                       type="button"
                       onClick={() => p.onSetTags(g.tags, !allOn)}
                       className="cursor-pointer text-[11px] text-ink-faint underline-offset-2 hover:underline"
                     >
-                      {allOn ? "解除" : "すべて選択"}
+                      {allOn ? t.deselect : t.selectAll}
                     </button>
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -119,7 +121,7 @@ export default function FilterPopover(p: Props) {
           </div>
 
           <label className="mb-4 flex cursor-pointer items-center justify-between text-sm text-ink-soft">
-            過去のイベントも表示
+            {t.showPast}
             <span className="relative inline-flex">
               <input
                 type="checkbox"
@@ -138,7 +140,7 @@ export default function FilterPopover(p: Props) {
             disabled={activeCount === 0}
             className="neu-raised-sm w-full cursor-pointer rounded-full py-2 text-sm text-ink-soft transition active:neu-inset disabled:cursor-default disabled:opacity-40"
           >
-            条件をクリア
+            {t.clear}
           </button>
         </div>
       )}

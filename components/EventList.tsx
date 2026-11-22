@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import { groupByMonthDay, monthShort } from "@/lib/date";
 import type { EventItem as Ev } from "@/lib/schema";
 import EventItem from "./EventItem";
+import { useI18n } from "./I18n";
 
 type Props = {
   events: Ev[];
@@ -13,10 +14,11 @@ type Props = {
 };
 
 export default function EventList({ events, selectedDate, activeTags, onTagClick }: Props) {
+  const { t } = useI18n();
   const months = groupByMonthDay(events);
 
   if (months.length === 0) {
-    return <p className="px-6 py-24 text-center text-ink-faint">条件に一致するイベントはありません</p>;
+    return <p className="px-6 py-24 text-center text-ink-faint">{t.noResults}</p>;
   }
 
   return (
@@ -24,7 +26,7 @@ export default function EventList({ events, selectedDate, activeTags, onTagClick
       {months.map((m, mi) => (
         <section
           key={m.monthKey}
-          aria-label={`${m.year}年${m.month}月`}
+          aria-label={t.monthLabel(m.year, m.month)}
           className={`min-h-[45vh] px-4 py-5 sm:px-6 ${mi > 0 ? "border-t border-dashed border-rule" : ""}`}
         >
           <div className="grid grid-cols-1 gap-y-2 sm:grid-cols-[4.5rem_1fr] sm:gap-x-2">
