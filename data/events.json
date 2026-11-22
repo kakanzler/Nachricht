@@ -284,6 +284,19 @@
     "source": "techplay"
   },
   {
+    "id": "connpass-413698",
+    "title": "Blockchain Kaigi 2026",
+    "url": "https://connpass.com/event/413698/",
+    "start": "2026-12-09T12:00:00+09:00",
+    "end": "2026-12-12T13:20:00+09:00",
+    "mode": "offline",
+    "venue": "東京スカイツリータウンキャンパス（千葉工業大学）",
+    "tags": [
+      "Blockchain"
+    ],
+    "source": "connpass"
+  },
+  {
     "id": "one-summit-japan-2026",
     "title": "ONE Summit Japan 2026",
     "url": "https://events.linuxfoundation.org/open-networking-edge-summit-japan/",
@@ -312,6 +325,21 @@
     ],
     "source": "dev.events",
     "description": "PyTorch Foundation 主催。開催日は公式サイトで確認済み、時刻・会場の詳細は未確認。"
+  },
+  {
+    "id": "open-compliance-summit-2026",
+    "title": "Open Compliance Summit 2026",
+    "url": "https://events.linuxfoundation.org/open-compliance-summit/",
+    "start": "2026-12-10T10:00:00+09:00",
+    "end": "2026-12-11T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "東京",
+    "tags": [
+      "OSS",
+      "Compliance"
+    ],
+    "source": "dev.events",
+    "description": "Linux Foundation 主催。開催日は公式サイトで確認済み、時刻・会場の詳細は未確認。"
   },
   {
     "id": "doorkeeper-kusanagi-199999",
@@ -357,6 +385,19 @@
     "description": "10:00 ハンズオン、13:00 セッション開始。参加無料（事前登録制）、有料ワークショップあり。"
   },
   {
+    "id": "connpass-404336",
+    "title": "PyCon mini Tokyo with PythonAsia conference",
+    "url": "https://pyconjp.connpass.com/event/404336/",
+    "start": "2026-12-12T10:00:00+09:00",
+    "end": "2026-12-12T18:00:00+09:00",
+    "mode": "offline",
+    "venue": "GMOインターネットグループ 第二本社 GMO Yours・フクラス",
+    "tags": [
+      "Python"
+    ],
+    "source": "connpass"
+  },
+  {
     "id": "techplay-1001639",
     "title": "AI Engineering Summit Tokyo 2026",
     "url": "https://techplay.jp/event/1001639",
@@ -382,6 +423,19 @@
     ],
     "source": "jaws-ug",
     "description": "LT 大会はライブ配信あり。"
+  },
+  {
+    "id": "connpass-412186",
+    "title": "Qiita Woman Summit supported by パナソニック コネクト",
+    "url": "https://increments.connpass.com/event/412186/",
+    "start": "2026-12-18T18:00:00+09:00",
+    "end": "2026-12-18T20:00:00+09:00",
+    "mode": "online",
+    "tags": [
+      "Community",
+      "Career"
+    ],
+    "source": "connpass"
   },
   {
     "id": "connpass-401200",
