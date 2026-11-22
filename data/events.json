@@ -97,6 +97,22 @@
     "description": "日本PostgreSQLユーザ会主催。18:30 から懇親会。"
   },
   {
+    "id": "yapc-tokyo-2026",
+    "title": "YAPC::Tokyo 2026",
+    "url": "https://yapcjapan.org/2026tokyo/",
+    "start": "2026-11-27T10:00:00+09:00",
+    "end": "2026-11-29T18:00:00+09:00",
+    "timeTbd": true,
+    "mode": "offline",
+    "venue": "東京ビッグサイト",
+    "tags": [
+      "Perl",
+      "Backend"
+    ],
+    "source": "findy",
+    "description": "11/27 前夜祭、11/28〜29 本編。Japan Perl Association 主催。"
+  },
+  {
     "id": "connpass-408911",
     "title": "Business Technology Conference Japan 2026",
     "url": "https://corp-engr.connpass.com/event/408911/",
@@ -139,6 +155,20 @@
     ],
     "source": "doorkeeper",
     "description": "現地開催のみ、オンライン配信・アーカイブなし。"
+  },
+  {
+    "id": "backlog-world-2026",
+    "title": "Backlog World 2026",
+    "url": "https://jbuginfo.backlog.com/backlogworld2026/",
+    "start": "2026-11-28T10:00:00+09:00",
+    "end": "2026-11-28T18:00:00+09:00",
+    "mode": "hybrid",
+    "tags": [
+      "Management",
+      "Agile"
+    ],
+    "source": "findy",
+    "description": "プロジェクト管理ツール Backlog のユーザーコミュニティ（JBUG）によるカンファレンス。"
   },
   {
     "id": "connpass-405628",
@@ -230,6 +260,20 @@
     "description": "Ruby の国内最大のビジネスカンファレンス。参加費 6,000円ほか（事前登録制）。"
   },
   {
+    "id": "sbbit-90257",
+    "title": "サイバーセキュリティ対策 SUMMIT 2026 東京",
+    "url": "https://www.sbbit.jp/eventinfo/detail/90257",
+    "start": "2026-12-04T13:00:00+09:00",
+    "end": "2026-12-04T18:50:00+09:00",
+    "mode": "offline",
+    "venue": "浜松町コンベンションホール",
+    "tags": [
+      "Security"
+    ],
+    "source": "sbbit",
+    "description": "ビジネス+IT 主催。企業のセキュリティ担当者向け。"
+  },
+  {
     "id": "connpass-406506",
     "title": "Open Source Conference 2026 Okinawa",
     "url": "https://ospn.connpass.com/event/406506/",
@@ -285,6 +329,21 @@
       "AI"
     ],
     "source": "techplay"
+  },
+  {
+    "id": "cydef-2026",
+    "title": "CYDEF2026",
+    "url": "https://2026.cydef.net/",
+    "start": "2026-12-09T10:00:00+09:00",
+    "end": "2026-12-10T18:00:00+09:00",
+    "timeTbd": true,
+    "mode": "offline",
+    "venue": "イイノカンファレンスルーム（東京）",
+    "tags": [
+      "Security"
+    ],
+    "source": "findy",
+    "description": "サイバーディフェンスイノベーション機構（OCDI）主催。後日アーカイブ配信予定。"
   },
   {
     "id": "connpass-413698",
@@ -351,6 +410,20 @@
     "description": "Linux Foundation 主催。"
   },
   {
+    "id": "sbbit-security-management-2026-winter",
+    "title": "セキュリティマネジメントカンファレンス 2026 冬",
+    "url": "https://www.sbbit.jp/eventinfo/security-management-online",
+    "start": "2026-12-10T11:00:00+09:00",
+    "end": "2026-12-11T18:00:00+09:00",
+    "timeTbd": true,
+    "mode": "online",
+    "tags": [
+      "Security"
+    ],
+    "source": "sbbit",
+    "description": "ビジネス+IT 主催の Live 配信ウェビナー。参加無料（事前登録制）。両日 11:00 開始、終了時刻は未掲載。"
+  },
+  {
     "id": "doorkeeper-kusanagi-199999",
     "title": "KUSANAGIサミット2026 〜AIで激増するWebのセキュリティリスク、各レイヤーでどう守る？〜",
     "url": "https://enterprise-wordpress.doorkeeper.jp/events/199999",
@@ -409,14 +482,16 @@
   {
     "id": "techplay-1001639",
     "title": "AI Engineering Summit Tokyo 2026",
-    "url": "https://techplay.jp/event/1001639",
+    "url": "https://ai-engineering-summit-tokyo.findy-tools.io/2026-winter/jp",
     "start": "2026-12-14T09:30:00+09:00",
     "end": "2026-12-15T18:30:00+09:00",
     "mode": "hybrid",
+    "venue": "浜松町コンベンションホール＆Hybridスタジオ",
     "tags": [
       "AI"
     ],
-    "source": "techplay"
+    "source": "findy",
+    "description": "ファインディ主催。一部オンライン配信あり。"
   },
   {
     "id": "connpass-411543",
@@ -517,6 +592,21 @@
     "description": "YouTube Live で配信。"
   },
   {
+    "id": "rsgt-2027",
+    "title": "Regional Scrum Gathering Tokyo 2027",
+    "url": "https://2027.scrumgatheringtokyo.org/",
+    "start": "2027-01-06T10:00:00+09:00",
+    "end": "2027-01-08T18:00:00+09:00",
+    "timeTbd": true,
+    "mode": "hybrid",
+    "venue": "ベルサール羽田空港",
+    "tags": [
+      "Agile"
+    ],
+    "source": "findy",
+    "description": "国内最大級のスクラムのカンファレンス（16回目）。"
+  },
+  {
     "id": "connpass-408379",
     "title": "PHPカンファレンス関西2026",
     "url": "https://phpkansai.connpass.com/event/408379/",
@@ -543,6 +633,21 @@
       "Infrastructure"
     ],
     "source": "connpass"
+  },
+  {
+    "id": "aidd-summit-2027",
+    "title": "AI駆動開発Summit 2027",
+    "url": "https://aiddsummit2027.ai-driven.dev/",
+    "start": "2027-01-26T13:00:00+09:00",
+    "end": "2027-01-28T18:00:00+09:00",
+    "timeTbd": true,
+    "mode": "hybrid",
+    "venue": "株式会社SHIFT（麻布台ヒルズ 森JPタワー 48F）",
+    "tags": [
+      "AI"
+    ],
+    "source": "findy",
+    "description": "参加無料。現地参加＋オンライン参加（connpass で登録）。各日 13:00 開始。"
   },
   {
     "id": "connpass-412239",
@@ -682,5 +787,22 @@
       "Python"
     ],
     "source": "connpass"
+  },
+  {
+    "id": "japan-it-week-spring-2027",
+    "title": "Japan IT Week 春 2027（情報セキュリティ EXPO ほか）",
+    "url": "https://www.japan-it.jp/it/ja-jp/visit/ist.html",
+    "start": "2027-04-07T10:00:00+09:00",
+    "end": "2027-04-09T18:00:00+09:00",
+    "timeTbd": true,
+    "mode": "offline",
+    "venue": "東京ビッグサイト",
+    "tags": [
+      "Security",
+      "Cloud",
+      "Infrastructure"
+    ],
+    "source": "japan-it-week",
+    "description": "国内最大級の IT 展示会。情報セキュリティ・クラウド・AI などの専門展を同時開催。来場登録制。"
   }
 ]

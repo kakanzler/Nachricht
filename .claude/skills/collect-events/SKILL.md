@@ -10,6 +10,7 @@ ITイベントポータル Nachricht のデータ `data/events.json` を、Web �
 ## 1. 準備
 - `data/events.json` を読み、既存のイベントと使われているタグ名を把握する。
 - 今日の日付を確認し、収集期間を **今日〜約3か月先** とする。
+  - **例外: 大型の展示会・カンファレンスは今日〜6か月先まで拾う。** Japan IT Week、AWS Summit Japan、Developers Summit、KubeCon Japan、SRE Kaigi のように、数千人規模か毎年恒例の旗艦イベントが対象。半年先の大型イベントが見えていること自体がポータルの価値になるため。
 
 ## 2. 情報源（起点）
 以下をすべて確認したうえで、Web 検索でさらに広げる。
@@ -18,6 +19,10 @@ ITイベントポータル Nachricht のデータ `data/events.json` を、Web �
 - connpass カンファレンス特集: https://connpass.com/feature/conference/
 - CodeZine「ITエンジニア向け大規模イベントリスト」連載: https://codezine.jp/article/detail/30386
   - 毎月「YYYY年M月に開催される注目の…」の記事が出る。記事の末尾にある連載一覧から最新月の記事をたどる。
+- **Findy Conference: https://conference.findy-code.io/events** — 「日本のテックカンファレンスを集約」した一覧（2ページ程度）。SRE Kaigi、Developers Summit なども載る。connpass 特集と並ぶ柱。
+  - 一覧と詳細ページはどちらも表示時に中身を組み立てる作りなので、fetch ではなくブラウザで開く。
+  - 詳細ページ（`/events/<slug>/<id>`）の「開催日時」「開催場所」の欄には、日付と形式（ハイブリッド／オフライン）しか出ない。時刻と会場は、同じページの「LP」欄にある公式サイトで裏付けを取る。
+- **ビジネス+IT: https://www.sbbit.jp/eventinfo** — 開催予定が数百件あるが、製造業・金融・GX・CRM など経営層向けの DX セミナーが大半。**タイトルにセキュリティ・インフラ・クラウド・開発系の言葉があるカンファレンス／サミットだけ**採る。詳細ページの「日時」「会場」「開催形態」の欄を使う。トップのスライドはクリック先がずれることがあるので、リンクは一覧の各行から取る。
 - TECH PLAY: https://techplay.jp/event — 企業主催のオンラインカンファレンスを拾う。「Conference」「カンファレンス」で検索する。
 - Doorkeeper: https://www.doorkeeper.jp/events — 企業の販促ウェビナーが多いので、カンファレンス級だけ採用する。
 - dev.events（日本）: https://dev.events/AS/JP/tech — 海外系・英語のカンファレンス。分野別のページもある（`/AS/JP/sre`、`/AS/JP/cloud` など）。
@@ -26,6 +31,7 @@ ITイベントポータル Nachricht のデータ `data/events.json` を、Web �
 - JAWS-UG 公式: https://jaws-ug.jp/ — トップページの「開催予定のイベント」に、支部の勉強会が並ぶ。
 - AWS イベントとウェビナー: https://aws.amazon.com/jp/events/ — AWS Summit Japan、JumpStart などの公式イベント。
 - CloudNative Days: https://cloudnativedays.jp/ — 次回開催の告知を確認する。
+- **Japan IT Week: https://www.japan-it.jp/it/ja-jp/visit/ist.html** — 情報セキュリティ EXPO の来場案内。春（東京ビッグサイト）・夏・秋（幕張メッセ）・大阪の年4回の会期が載っている。6か月の例外の対象。開場時間はこのページに無いので、見つからなければ `timeTbd: true` にする。
 - SRE Kaigi: `https://<年>.srekaigi.net/`（例: https://2027.srekaigi.net/）
 - Google Cloud Webinars: https://cloudonair.withgoogle.com/ — Cookie の同意画面が出たら「同意しない」を選ぶ。
 - connpass のキーワード検索: `AWS`、`インフラ`、`SRE`、`Kubernetes`、`クラウド`、`Platform Engineering`
@@ -69,7 +75,7 @@ ITイベントポータル Nachricht のデータ `data/events.json` を、Web �
   "venue": "会場名 (offline / hybrid のときのみ)",
   "venueTbd": "true のときのみ書く (都市名しか分からない)",
   "tags": ["AI", "Security"],
-  "source": "connpass | codezine | official | web",
+  "source": "connpass | codezine | findy | sbbit | techplay | doorkeeper | dev.events | jaws-ug | japan-it-week | official | web",
   "description": "1〜2 文の概要 (任意)"
 }
 ```

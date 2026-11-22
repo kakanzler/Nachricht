@@ -9,7 +9,7 @@ export const TAG_GROUPS: { label: string; tags: string[] }[] = [
   { label: "セキュリティ", tags: ["Security", "Compliance"] },
   {
     label: "言語・開発",
-    tags: ["Frontend", "Backend", "Architecture", "Mobile", "Ruby", "PHP", "Python", "Go", "Java", "Blockchain", "OSS"],
+    tags: ["Frontend", "Backend", "Architecture", "Mobile", "Ruby", "PHP", "Python", "Go", "Java", "Perl", "Blockchain", "OSS"],
   },
   { label: "組織・キャリア", tags: ["Agile", "Management", "Career", "Design", "Corporate IT", "Community"] },
 ];

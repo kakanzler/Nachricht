@@ -21,6 +21,9 @@ const SOURCE_LABEL: Record<string, string> = {
   doorkeeper: "Doorkeeper",
   "dev.events": "dev.events",
   "jaws-ug": "JAWS-UG",
+  findy: "Findy Conference",
+  sbbit: "ビジネス+IT",
+  "japan-it-week": "Japan IT Week",
   official: "公式サイト",
 };
 
