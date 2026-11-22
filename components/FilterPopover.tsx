@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { EventMode } from "@/lib/schema";
+import { groupTags } from "@/lib/tagGroups";
 import { TagPill } from "./Pill";
 
 const MODES: EventMode[] = ["offline", "online", "hybrid"];
@@ -12,6 +13,7 @@ type Props = {
   modes: Set<EventMode>;
   showPast: boolean;
   onToggleTag: (t: string) => void;
+  onSetTags: (tags: string[], on: boolean) => void;
   onToggleMode: (m: EventMode) => void;
   onShowPast: (v: boolean) => void;
   onClear: () => void;
@@ -91,10 +93,29 @@ export default function FilterPopover(p: Props) {
           </div>
 
           <h3 className="mb-2 text-xs font-semibold tracking-wider text-ink-faint uppercase">タグ</h3>
-          <div className="mb-4 flex max-h-44 flex-wrap gap-2 overflow-y-auto p-1">
-            {p.allTags.map((t) => (
-              <TagPill key={t} tag={t} active={p.tags.has(t)} onClick={() => p.onToggleTag(t)} />
-            ))}
+          <div className="mb-4 max-h-[min(22rem,50vh)] space-y-3 overflow-y-auto p-1">
+            {groupTags(p.allTags).map((g) => {
+              const allOn = g.tags.every((t) => p.tags.has(t));
+              return (
+                <div key={g.label}>
+                  <div className="mb-1.5 flex items-center justify-between">
+                    <span className="text-xs font-medium text-ink-soft">{g.label}</span>
+                    <button
+                      type="button"
+                      onClick={() => p.onSetTags(g.tags, !allOn)}
+                      className="cursor-pointer text-[11px] text-ink-faint underline-offset-2 hover:underline"
+                    >
+                      {allOn ? "解除" : "すべて選択"}
+                    </button>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {g.tags.map((t) => (
+                      <TagPill key={t} tag={t} active={p.tags.has(t)} onClick={() => p.onToggleTag(t)} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           <label className="mb-4 flex cursor-pointer items-center justify-between text-sm text-ink-soft">

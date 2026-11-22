@@ -9,7 +9,8 @@ const MODE_STYLE: Record<EventItem["mode"], string> = {
 };
 
 export function ModePill({ event }: { event: EventItem }) {
-  const label = event.venue && event.mode !== "online" ? `${event.mode} @ ${event.venue}` : event.mode;
+  const venue = event.venue && event.venueTbd ? `${event.venue}（会場未定）` : event.venue;
+  const label = venue && event.mode !== "online" ? `${event.mode} @ ${venue}` : event.mode;
   return (
     <span
       className={`inline-block max-w-full truncate rounded-full border px-3 py-0.5 text-xs font-medium sm:text-sm ${MODE_STYLE[event.mode]}`}

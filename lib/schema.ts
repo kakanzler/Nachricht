@@ -9,8 +9,12 @@ export const EventSchema = z
     url: z.url(),
     start: isoWithOffset,
     end: isoWithOffset.optional(),
+    /** Only the date(s) are confirmed; start/end clock times are placeholders. */
+    timeTbd: z.boolean().optional(),
     mode: z.enum(["offline", "online", "hybrid"]),
     venue: z.string().optional(),
+    /** Only the city/area is known, not the exact venue. */
+    venueTbd: z.boolean().optional(),
     tags: z.array(z.string().min(1)).default([]),
     source: z.string().optional(),
     description: z.string().optional(),

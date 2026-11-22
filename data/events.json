@@ -161,14 +161,16 @@
     "url": "https://www.gartner.com/jp/conferences/apac/infrastructure-operations-cloud-japan",
     "start": "2026-12-01T10:00:00+09:00",
     "end": "2026-12-03T18:00:00+09:00",
+    "timeTbd": true,
     "mode": "offline",
     "venue": "東京",
+    "venueTbd": true,
     "tags": [
       "Infrastructure",
       "Cloud"
     ],
     "source": "dev.events",
-    "description": "有料の商用カンファレンス。開催日は公式サイトで確認済み、時刻・会場の詳細は未確認。"
+    "description": "有料の商用カンファレンス。"
   },
   {
     "id": "connpass-408824",
@@ -261,6 +263,7 @@
     "url": "https://events.linuxfoundation.org/open-source-summit-japan/",
     "start": "2026-12-07T10:00:00+09:00",
     "end": "2026-12-09T18:00:00+09:00",
+    "timeTbd": true,
     "mode": "offline",
     "venue": "虎ノ門ヒルズフォーラム",
     "tags": [
@@ -268,7 +271,7 @@
       "Linux"
     ],
     "source": "codezine",
-    "description": "The Linux Foundation 主催。開催日は公式サイトで確認済み、時刻未確認。"
+    "description": "The Linux Foundation 主催。"
   },
   {
     "id": "connpass-409312",
@@ -302,29 +305,33 @@
     "url": "https://events.linuxfoundation.org/open-networking-edge-summit-japan/",
     "start": "2026-12-10T10:00:00+09:00",
     "end": "2026-12-11T18:00:00+09:00",
+    "timeTbd": true,
     "mode": "offline",
     "venue": "東京",
+    "venueTbd": true,
     "tags": [
       "Network",
       "Infrastructure",
       "OSS"
     ],
     "source": "dev.events",
-    "description": "Linux Foundation 主催のネットワーク／エッジのイベント。開催日は公式サイトで確認済み、時刻・会場の詳細は未確認。"
+    "description": "Linux Foundation 主催のネットワーク／エッジのイベント。"
   },
   {
     "id": "pytorch-day-japan-2026",
     "title": "PyTorch Day Japan 2026",
     "url": "https://events.linuxfoundation.org/pytorch-day-japan/",
     "start": "2026-12-10T10:00:00+09:00",
+    "timeTbd": true,
     "mode": "offline",
     "venue": "東京",
+    "venueTbd": true,
     "tags": [
       "AI",
       "OSS"
     ],
     "source": "dev.events",
-    "description": "PyTorch Foundation 主催。開催日は公式サイトで確認済み、時刻・会場の詳細は未確認。"
+    "description": "PyTorch Foundation 主催。"
   },
   {
     "id": "open-compliance-summit-2026",
@@ -332,14 +339,16 @@
     "url": "https://events.linuxfoundation.org/open-compliance-summit/",
     "start": "2026-12-10T10:00:00+09:00",
     "end": "2026-12-11T18:00:00+09:00",
+    "timeTbd": true,
     "mode": "offline",
     "venue": "東京",
+    "venueTbd": true,
     "tags": [
       "OSS",
       "Compliance"
     ],
     "source": "dev.events",
-    "description": "Linux Foundation 主催。開催日は公式サイトで確認済み、時刻・会場の詳細は未確認。"
+    "description": "Linux Foundation 主催。"
   },
   {
     "id": "doorkeeper-kusanagi-199999",
@@ -651,6 +660,7 @@
     "title": "SRE Kaigi 2027",
     "url": "https://2027.srekaigi.net/",
     "start": "2027-02-20T10:00:00+09:00",
+    "timeTbd": true,
     "mode": "hybrid",
     "venue": "中野セントラルパーク カンファレンス",
     "tags": [
@@ -658,7 +668,7 @@
       "Infrastructure"
     ],
     "source": "official",
-    "description": "オフライン＋一部オンライン。開催日・会場は公式サイトで確認済み、時刻未確認。"
+    "description": "オフライン＋一部オンライン。"
   },
   {
     "id": "connpass-409477",

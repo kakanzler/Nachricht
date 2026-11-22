@@ -52,7 +52,8 @@ ITイベントポータル Nachricht のデータ `data/events.json` を、Web �
 - 日本国内での開催、またはオンライン開催。
 - 「カンファレンス規模」または「参加者 30 人以上の勉強会」を優先する。
 - **日時・形式・会場は、各イベントの公式ページ（または申込ページ）で裏付けが取れたものだけ書く。** まとめ記事だけを根拠にしない。推測で埋めない。
-- 日付が確認できても時刻が分からないときは、公式ページにある開場・開始時刻を使う。どうしても分からなければ `start` を `T10:00:00+09:00` とし、`description` に「時刻未確認」と書く。
+- 日付が確認できても時刻が分からないときは、公式ページにある開場・開始時刻を使う。どうしても分からなければ `start` を `T10:00:00+09:00`（複数日なら `end` を最終日の `T18:00:00+09:00`）とし、**`"timeTbd": true`** を付ける。画面には「時刻未定」と表示され、カレンダー登録は終日予定になる。
+- 都市名しか分からないときは、`venue` に都市名（例: `東京`）を入れ、**`"venueTbd": true`** を付ける。
 - 複数日にわたるイベントは、`start` を初日の開始、`end` を最終日の終了にする。
 
 ## 4. スキーマ（`lib/schema.ts` が正）
@@ -63,15 +64,23 @@ ITイベントポータル Nachricht のデータ `data/events.json` を、Web �
   "url": "公式ページの URL (https://...)",
   "start": "2026-11-27T18:00:00+09:00",
   "end": "2026-11-27T20:00:00+09:00",
+  "timeTbd": "true のときのみ書く (時刻未確認)",
   "mode": "offline | online | hybrid",
   "venue": "会場名 (offline / hybrid のときのみ)",
+  "venueTbd": "true のときのみ書く (都市名しか分からない)",
   "tags": ["AI", "Security"],
   "source": "connpass | codezine | official | web",
   "description": "1〜2 文の概要 (任意)"
 }
 ```
 - 日時は必ず `+09:00` 付きの ISO 8601 で書く。
-- `tags` は英語の短い名詞で 1〜4 個。既存のタグ名を優先して表記ゆれを避ける（例: `AI`, `Security`, `Cloud`, `Frontend`, `Backend`, `Infrastructure`, `Data`, `SRE`, `Mobile`, `Design`, `Agile`, `Kubernetes`, `MLOps`）。
+- `tags` は英語の短い名詞で 1〜4 個。**`lib/tagGroups.ts` の語彙を使う**（フィルター画面の分類と連動している）。
+  - クラウド・インフラ: `Cloud` `AWS` `Azure` `Google Cloud` `Infrastructure` `Kubernetes` `SRE` `Linux` `Network` `Database`
+  - AI・データ: `AI` `MLOps` `Data`
+  - セキュリティ: `Security` `Compliance`
+  - 言語・開発: `Frontend` `Backend` `Architecture` `Mobile` `Ruby` `PHP` `Python` `Go` `Java` `Blockchain` `OSS`
+  - 組織・キャリア: `Agile` `Management` `Career` `Design` `Corporate IT` `Community`
+  - どうしても当てはまらない新しいタグを使う場合は、`lib/tagGroups.ts` にも追加する（追加しないと「その他」に入る）。
 
 ## 5. マージと書き出し
 - `id` が同じものは、新しい情報で上書きする。

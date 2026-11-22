@@ -47,10 +47,19 @@ export const monthShort = (m: number) => MONTH_SHORT[m - 1];
 
 export function timeRange(e: EventItem): string {
   const s = jst(e.start);
-  if (!e.end) return s.time;
-  const t = jst(e.end);
+  const t = e.end ? jst(e.end) : null;
+  if (e.timeTbd) {
+    return t && t.dateKey !== s.dateKey ? `時刻未定（〜${t.month}/${t.day}）` : "時刻未定";
+  }
+  if (!t) return s.time;
   return t.dateKey === s.dateKey ? `${s.time}~${t.time}` : `${s.time}~${t.month}/${t.day} ${t.time}`;
 }
+
+/** JST calendar date (YYYY-MM-DD) for "now"; used to hide finished events. */
+export const todayKey = (now: number = Date.now()) => jst(now).dateKey;
+
+/** True when the event has finished before the given JST day. */
+export const isPast = (e: EventItem, today: string) => jst(e.end ?? e.start).dateKey < today;
 
 export type DayGroup = { dateKey: string; day: number; weekday: string; events: EventItem[] };
 export type MonthGroup = { monthKey: string; year: number; month: number; days: DayGroup[] };

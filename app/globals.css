@@ -4,9 +4,10 @@
   --surface: #e8ebf0;
   --shadow-dark: #c5cad3;
   --shadow-light: #ffffff;
-  --ink: #3d4250;
-  --ink-soft: #6b7180;
-  --ink-faint: #9aa0ad;
+  /* contrast on --surface: 10.4 / 5.2 / 4.6 (all ≥ WCAG AA 4.5) */
+  --ink: #2f3441;
+  --ink-soft: #5b6170;
+  --ink-faint: #636978;
   --rule: #b9bfca;
   --grad-primary: linear-gradient(90deg, #f022a3, #8b5cf6 35%, #5798f2);
   --grad-accent: linear-gradient(90deg, #ff6000 1%, #f022a3 51%, #8b5cf6);
